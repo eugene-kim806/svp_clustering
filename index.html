@@ -168,15 +168,52 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Outro</h2>
+    <h2 class="title is-3 has-text-centered">
+      Clustering Strategy
+    </h2>
+
+     <h3 class="subtitle is-5">
+      Overview
+    </h3>
     <div class="content">
-      <p>
-        This is the last section. In this part, we bring together all the ideas explored throughout the project, reflecting on what was learned, what worked well, and what challenges emerged. We revisit the core objectives, summarizing how each was addressed, and highlight the most significant insights that have arisen from the work. Moreover, we outline how the outcomes contribute to the broader field, what implications they may have for future research or real-world applications, and why these findings matter. In addition, this section proposes concrete next steps: further experiments, methods refinement, validation on new datasets, collaborative extensions, or deployment scenarios. We also discuss potential limitations, acknowledge open questions, and suggest areas that merit deeper investigation.
+      <p>We clustered several thousand images of sub-visible particles collected from ten commercially available pharmaceutical products. The goal was to explore whether particles could be grouped based solely on visual similarity, without prior labeling or assumptions about particle type.
       </p>
     </div>
+      
+     <h3 class="subtitle is-5">
+      Unsupervised Image-Based Grouping
+    </h3>
+    <div class="content">
+      <p>
+        An unsupervised clustering algorithm was applied to image-derived features, grouping particles according to similarities in their visual appearance. This approach allows patterns to emerge directly from the data, rather than being imposed by predefined categories.
+      </p>
+    </div>
+
+    
+     <h3 class="subtitle is-5">
+      Morphological Consistency Within Clusters
+    </h3>
+    <div class="content">
+      <p>
+      Within each resulting cluster, particles exhibited broadly consistent morphological characteristics. These similarities suggest that the clustering captured shared visual features present across the dataset, such as shape, texture, or structural complexity. 
+      </p>
+    </div>
+
+ <h3 class="subtitle is-5">
+      High-Level View of Particle Diversity
+    </h3>
+    <div class="content">
+      <p>
+        Organization of thousands of images into a limited number of visually coherent groups provides a high-level overview of particle diversity across products. This structure serves as a foundation for further qualitative and quantitative analysis.
+      </p>
+    </div>
+
   </div>
 </section>
 
+
+
+  
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">References and Data Sources</h2>
