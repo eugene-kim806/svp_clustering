@@ -83,12 +83,36 @@
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Particle Image-Driven Morphology Clustering</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt lectus quis libero interdum, non facilisis sapien aliquet. Sed sit amet ex hendrerit, dignissim purus sit amet, blandit est. Integer nec mauris at dolor egestas volutpat. Quisque efficitur metus vitae dolor fermentum, quis varius neque consectetur.
-    </p>
+
+    <figure class="image has-text-centered">
+      <img src="./static/images/pipeline_figure.png"
+           alt="Clustering pipeline from raw SVP images to morphology profiles"
+           class="img-small75"
+           style="display: inline-block; width: 75%; height: auto;">
+      <figcaption class="is-size-6 has-text-grey">
+        Figure 2. Clustering pipeline from raw SVP images to unsupervised morphology groups and sample-level profiles.
+      </figcaption>
+    </figure>
+
     <div class="content has-text-justified">
+      <h3 class="subtitle is-5">Unsupervised morphology-aware framework</h3>
       <p>
-        Curabitur suscipit urna ut felis vulputate, nec dictum orci vehicula. Mauris aliquet, nunc et dignissim tincidunt, urna est tempus lacus, ut suscipit ex tellus a ipsum. Donec pretium tempor justo vitae molestie. Fusce ullamcorper leo id purus sodales, at cursus felis lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        We introduce an unsupervised framework that groups sub-visible particles according to shared visual characteristics.
+      </p>
+
+      <h3 class="subtitle is-5">From raw images to individual particles</h3>
+      <p>
+        Raw imaging data are refined to isolate individual particles, which are then represented in a compact morphology feature space.
+      </p>
+
+      <h3 class="subtitle is-5">Grouping by morphology</h3>
+      <p>
+        Particles with similar features are assigned to morphology-based groups, whereas particles that do not meet a similarity criterion remain unclassified.
+      </p>
+
+      <h3 class="subtitle is-5">Sample-level morphology profiles</h3>
+      <p>
+        Each sample is represented by a morphology profile that reports its distribution across the morphology groups and unclassified particles.
       </p>
     </div>
   </div>
