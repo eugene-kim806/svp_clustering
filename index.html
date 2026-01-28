@@ -97,22 +97,22 @@
     <div class="content has-text-justified">
       <h3 class="subtitle is-5">Unsupervised morphology-aware framework</h3>
       <p>
-        We introduce an unsupervised framework that groups sub-visible particles according to shared visual characteristics.
+        We introduce an unsupervised framework that groups sub-visible particles according to shared visual characteristics, treating image appearance as the primary basis for organization. The framework uses image-derived representations of individual particles to place visually similar particles into the same morphology-defined groups.
       </p>
 
       <h3 class="subtitle is-5">From raw images to individual particles</h3>
       <p>
-        Raw imaging data are refined to isolate individual particles, which are then represented in a compact morphology feature space.
+        Raw flow imaging microscopy frames are first processed to isolate individual particles and remove obvious artefacts. Each particle crop is then transformed into a compact feature representation that captures key aspects of its morphology, such as overall outline, internal structure, and texture patterns.
       </p>
 
       <h3 class="subtitle is-5">Grouping by morphology</h3>
       <p>
-        Particles with similar features are assigned to morphology-based groups, whereas particles that do not meet a similarity criterion remain unclassified.
+        Within this feature space, particles that exhibit similar visual characteristics are assigned to the same morphology-based group, forming clusters that reflect recurring shapes and appearances. Particles that do not show sufficient similarity to any existing group are left unclassified, avoiding forced assignments that could obscure meaningful differences.
       </p>
 
       <h3 class="subtitle is-5">Sample-level morphology profiles</h3>
       <p>
-        Each sample is represented by a morphology profile that reports its distribution across the morphology groups and unclassified particles.
+        For each sample, we aggregate cluster memberships into a morphology profile that reports the relative abundance of particles in each group, together with the fraction of unclassified particles. These profiles provide a concise, comparative view of how particle morphologies vary across products, conditions, or process settings.
       </p>
     </div>
   </div>
