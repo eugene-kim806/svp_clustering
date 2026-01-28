@@ -182,3 +182,29 @@ figcaption {
   margin-left: auto;      /* optional: center the image horizontally */
   margin-right: auto;     /* optional: center the image horizontally */
 }
+
+
+
+
+/* ===== 4-panel image row: SAME SIZE, SMALL, CLEAN ===== */
+
+.panel-4 .panel-img{
+  width: 120px;          /* shrink overall size here */
+  height: 120px;         /* same height = uniform panels */
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f7f7f7;   /* optional: makes boxes consistent */
+  border-radius: 8px;    /* optional */
+}
+
+.panel-4 .panel-img img{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;   /* no cropping */
+  display: block;
+}
+
