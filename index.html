@@ -152,10 +152,26 @@
      <h3 class="subtitle is-5 has-text-weight-bold">Unsupervised Image-Based Grouping</h3>
      <div class="content">
       <p>
-        An unsupervised clustering algorithm was applied to image-derived features, grouping particles according to similarities in their visual appearance. This approach allows patterns to emerge directly from the data, rather than being imposed by predefined categories.
+        An unsupervised clustering algorithm was applied to image-derived features, grouping particles according to similarities in their visual appearance. This approach allows patterns to emerge directly from the data, rather than being imposed by predefined categories. A feature-based similarity metric was used to compare particle images across the dataset. 
+        Each image was represented in a learned feature space, and similarity scores were computed by comparing a reference (query) image to all other images. The resulting scores were normalized to a 0–100% scale, where higher values indicate greater visual resemblance. Representative images spanning high, intermediate, and low similarity ranges were selected to visualize how the similarity score relates to particle morphology. Images with high similarity scores closely resemble the query in shape and texture, while lower scores correspond to progressively more distinct particle appearances, demonstrating that the similarity metric captures meaningful morphological differences within the dataset.
       </p>
      </div>
     </div>
+
+  
+    <div class="block has-text-centered">
+      <figure class="image">
+        <img src="./static/images/similar_score.png"
+             alt="Similar Score Representation"
+             style="display: inline-block; width: 75%; height: auto;">
+        <figcaption class="is-size-6 has-text-grey mt-2">
+          Similar Score Representation
+        </figcaption>
+      </figure>
+    </div>
+
+    
+    
 
     <div class = "block">
      <h3 class="subtitle is-5 has-text-weight-bold">Morphological Consistency Within Clusters</h3>
