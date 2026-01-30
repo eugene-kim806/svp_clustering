@@ -185,16 +185,15 @@ figcaption {
   height: 100%;
   object-fit: cover;
 }
-
 /* =========================
-   Similarity grid (NEATER + TIERED)
+   Similarity grid (SMALLER OVERALL, QUERY RELATIVELY BIGGER)
    ========================= */
 
 .sim-grid {
   display: grid;
-  grid-template-columns: 1.25fr 1fr; /* query less dominant */
-  gap: 1.75rem;
-  align-items: start;
+  grid-template-columns: 1.18fr 1fr;   /* slightly favors query, but not huge */
+  gap: 1.25rem;                        /* shrink overall footprint */
+  align-items: center;                 /* nicer vertical alignment */
 }
 
 /* Query: reference anchor */
@@ -202,19 +201,20 @@ figcaption {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;  /* centers relative to grid height */
+  justify-content: center;
   text-align: center;
 }
 
 .sim-title {
-  font-size: 0.85rem;
+  font-size: 0.78rem;                  /* smaller label */
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   opacity: 0.55;
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.45rem;
 }
 
+/* Shared image box */
 .sim-imgbox {
   border: 1px solid rgba(0,0,0,0.14);
   border-radius: 10px;
@@ -228,70 +228,69 @@ figcaption {
 .sim-imgbox img {
   width: 100%;
   height: 100%;
-  object-fit: contain;  /* keep query faithful */
   display: block;
 }
 
-/* Query size (already smaller) */
+/* ✅ Query: bigger than tiles, but still smaller overall */
 .sim-imgbox--query {
   width: 100%;
   aspect-ratio: 1 / 1;
-  max-width: 340px;      /* smaller query */
+  max-width: 300px;                    /* overall smaller (was 340) */
   margin: 0 auto;
   background: rgba(0,0,0,0.01);
   border: 1px solid rgba(0,0,0,0.12);
 }
 
-/* Tiles: 3×3 with stronger tier separation */
+.sim-imgbox--query img {
+  object-fit: contain;                 /* keep query faithful */
+}
+
+/* Tiles grid: smaller overall */
 .sim-tiles {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 1.2rem;
-  row-gap: 1.6rem;       /* bigger vertical gap between rows */
+  column-gap: 0.95rem;                 /* tighter */
+  row-gap: 1.2rem;                     /* tighter rows */
 }
 
-/* add a little extra space after row 1 and row 2 */
+/* tiny extra separation between rows (still reads as tiers) */
 .sim-tiles > .sim-tile:nth-child(3),
 .sim-tiles > .sim-tile:nth-child(6) {
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.35rem;
 }
 
 .sim-tile {
   text-align: center;
 }
 
-/* tile images */
+/* ✅ Tiles: shrink more than query */
 .sim-tile .sim-imgbox {
   aspect-ratio: 1 / 1;
   width: 100%;
-  max-width: 135px;
-  margin: 0 auto 0.28rem auto;
+  max-width: 112px;                    /* smaller tiles (was 135) */
+  margin: 0 auto 0.22rem auto;
   background: rgba(0,0,0,0.01);
   opacity: 0.95;
 }
 
-/* IMPORTANT: make tiles visually consistent (avoid floating whitespace) */
 .sim-tile .sim-imgbox img {
-  object-fit: cover;
+  object-fit: cover;                   /* consistent, no floating whitespace */
 }
 
-/* remove repeated label for cleaner look */
-.sim-cap {
-  display: none;
-}
+/* remove repeated label for clean look */
+.sim-cap { display: none; }
 
-/* percent */
+/* percent + bar: slightly smaller */
 .sim-pct {
-  font-size: 0.92rem;
+  font-size: 0.86rem;
   font-weight: 700;
-  margin-bottom: 0.14rem;
+  margin-bottom: 0.12rem;
 }
 
-/* bar */
 .sim-bar {
   width: 100%;
-  max-width: 150px;
-  height: 5px;
+  max-width: 120px;                    /* matches smaller tiles */
+  height: 4px;
   margin: 0 auto;
   border-radius: 6px;
   background: rgba(0,0,0,0.10);
@@ -305,19 +304,24 @@ figcaption {
   background: rgba(0,0,0,0.55);
 }
 
-/* optional: fade low similarity row a bit (makes hierarchy feel real) */
+/* optional: fade low similarity row a bit */
 .sim-tile:nth-child(n+7) {
   opacity: 0.78;
 }
 
 /* Responsive */
 @media (max-width: 900px) {
-  .sim-grid { grid-template-columns: 1fr; }
-  .sim-imgbox--query { max-width: 320px; }
+  .sim-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .sim-imgbox--query {
+    max-width: 280px;
+  }
 }
 
 @media (max-width: 520px) {
   .sim-tiles { grid-template-columns: repeat(2, 1fr); }
-  .sim-tile .sim-imgbox { max-width: 130px; }
-  .sim-bar { max-width: 150px; }
+  .sim-tile .sim-imgbox { max-width: 110px; }
+  .sim-bar { max-width: 120px; }
 }
