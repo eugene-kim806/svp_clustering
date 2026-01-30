@@ -326,27 +326,35 @@ figcaption {
   .sim-bar { max-width: 120px; }
 }
 
-
-
 /* =========================
-   Normalize subsection spacing
+   SVP flow subsection spacing (scoped)
    ========================= */
 
-/* All subsection titles (h3) */
-.subtitle.is-5 {
-  margin-top: 2.5rem !important;
-  margin-bottom: 0.75rem !important;
+.svp-flow{
+  margin-top: 1rem;
 }
 
-/* Paragraph blocks under subsection titles */
-.subtitle.is-5 + .content,
-.subtitle.is-5 + p,
-.subtitle.is-5 + .uncls-box {
-  margin-top: 0.5rem;
+.svp-flow .svp-subsec{
+  margin-top: 2.1rem;          /* controls space BETWEEN subsections */
 }
 
-/* Remove accidental extra margins from Bulma blocks */
-.block {
-  margin-bottom: 0;
+.svp-flow .svp-subsec:first-child{
+  margin-top: 0;
 }
+
+.svp-flow .svp-subsec > .subtitle{
+  margin: 0 0 0.65rem 0 !important;  /* space under the heading */
+}
+
+.svp-flow .svp-subsec > .content{
+  margin: 0 !important;
+}
+
+.svp-flow .svp-subsec > .content p{
+  margin: 0 !important;         /* prevents Bulma's default p spacing */
+  line-height: 1.55;
+}
+
+
+
 
