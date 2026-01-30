@@ -227,15 +227,19 @@ figcaption {
   display: block;
 }
 
-/* Query size: smaller + calmer */
+/* Smaller, calmer query image */
 .sim-imgbox--query {
   width: 100%;
   aspect-ratio: 1 / 1;
-  max-width: 420px;                    /* was 520px */
+  max-width: 340px;      /* ↓ key change */
   margin: 0 auto;
   background: rgba(0,0,0,0.01);
   border: 1px solid rgba(0,0,0,0.12);
 }
+
+
+
+
 
 /* Tiles */
 .sim-tiles {
