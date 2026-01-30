@@ -158,24 +158,102 @@
      </div>
     </div>
 
-  
-    <div class="block has-text-centered">
-      <figure class="image">
-        <img src="./static/images/similar_score.png"
-             alt="Similar Score Representation"
-             style="display: inline-block; width: 75%; height: auto;">
-        <figcaption class="is-size-6 has-text-grey mt-2">
-          Similar Score Representation
-        </figcaption>
-      </figure>
+
+
+    
+  <div class="block has-text-centered">
+  <figure class="image">
+    <div class="sim-grid">
+
+      <!-- LEFT: Query -->
+      <div class="sim-query">
+        <div class="sim-title">Query image</div>
+        <div class="sim-imgbox sim-imgbox--query">
+          <img src="./static/images/score/query.png" alt="Query image">
+        </div>
+      </div>
+
+      <!-- RIGHT: 3×3 Similarity tiles -->
+      <div class="sim-tiles">
+
+        <!-- Row 1 -->
+        <div class="sim-tile">
+          <div class="sim-imgbox"><img src="./static/images/score/com_1.png" alt="Similar 90% (1)"></div>
+          <div class="sim-cap">Similarity score</div>
+          <div class="sim-pct">90%</div>
+          <div class="sim-bar"><span style="width:90%"></span></div>
+        </div>
+
+        <div class="sim-tile">
+          <div class="sim-imgbox"><img src="./static/images/score/com_2.png" alt="Similar 90% (2)"></div>
+          <div class="sim-cap">Similarity score</div>
+          <div class="sim-pct">90%</div>
+          <div class="sim-bar"><span style="width:90%"></span></div>
+        </div>
+
+        <div class="sim-tile">
+          <div class="sim-imgbox"><img src="./static/images/score/com_3.png" alt="Similar 90% (3)"></div>
+          <div class="sim-cap">Similarity score</div>
+          <div class="sim-pct">90%</div>
+          <div class="sim-bar"><span style="width:90%"></span></div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="sim-tile">
+          <div class="sim-imgbox"><img src="./static/images/score/com_4.png" alt="Similar 88%"></div>
+          <div class="sim-cap">Similarity score</div>
+          <div class="sim-pct">88%</div>
+          <div class="sim-bar"><span style="width:88%"></span></div>
+        </div>
+
+        <div class="sim-tile">
+          <div class="sim-imgbox"><img src="./static/images/score/com_5.png" alt="Similar 85%"></div>
+          <div class="sim-cap">Similarity score</div>
+          <div class="sim-pct">85%</div>
+          <div class="sim-bar"><span style="width:85%"></span></div>
+        </div>
+
+        <div class="sim-tile">
+          <div class="sim-imgbox"><img src="./static/images/score/com_6.png" alt="Similar 82%"></div>
+          <div class="sim-cap">Similarity score</div>
+          <div class="sim-pct">82%</div>
+          <div class="sim-bar"><span style="width:82%"></span></div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="sim-tile">
+          <div class="sim-imgbox"><img src="./static/images/score/com_7.png" alt="Dissimilar 55%"></div>
+          <div class="sim-cap">Similarity score</div>
+          <div class="sim-pct">55%</div>
+          <div class="sim-bar"><span style="width:55%"></span></div>
+        </div>
+
+        <div class="sim-tile">
+          <div class="sim-imgbox"><img src="./static/images/score/com_8.png" alt="Dissimilar 30%"></div>
+          <div class="sim-cap">Similarity score</div>
+          <div class="sim-pct">30%</div>
+          <div class="sim-bar"><span style="width:30%"></span></div>
+        </div>
+
+        <div class="sim-tile">
+          <div class="sim-imgbox"><img src="./static/images/score/com_9.png" alt="Dissimilar 5%"></div>
+          <div class="sim-cap">Similarity score</div>
+          <div class="sim-pct">5%</div>
+          <div class="sim-bar"><span style="width:5%"></span></div>
+        </div>
+
+      </div>
     </div>
 
+    <figcaption class="is-size-6 has-text-grey mt-3">
+      Similarity score visualization (query on left; representative matches across high → low similarity).
+    </figcaption>
+  </figure>
+</div>
+  
+
     
-    
-
-
-
-
+  
 <div class="block">
   <h3 class="subtitle is-5 has-text-weight-bold">Morphological Consistency Within Clusters</h3>
   <div class="content">
