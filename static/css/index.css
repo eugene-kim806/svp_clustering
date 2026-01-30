@@ -325,3 +325,28 @@ figcaption {
   .sim-tile .sim-imgbox { max-width: 110px; }
   .sim-bar { max-width: 120px; }
 }
+
+
+
+/* =========================
+   Normalize subsection spacing
+   ========================= */
+
+/* All subsection titles (h3) */
+.subtitle.is-5 {
+  margin-top: 2.5rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+/* Paragraph blocks under subsection titles */
+.subtitle.is-5 + .content,
+.subtitle.is-5 + p,
+.subtitle.is-5 + .uncls-box {
+  margin-top: 0.5rem;
+}
+
+/* Remove accidental extra margins from Bulma blocks */
+.block {
+  margin-bottom: 0;
+}
+
