@@ -463,4 +463,53 @@ figcaption {
 }
 
 
+/* --- Cleaner similarity tile UI --- */
+
+/* tighten the right grid spacing a bit */
+.sim-tiles{
+  gap: 1.15rem 1.6rem;
+}
+
+/* tile image spacing */
+.sim-tile .sim-imgbox{
+  margin: 0 auto 0.55rem auto;
+}
+
+/* make "Similarity score" feel like a subtle label */
+.sim-cap{
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  opacity: 0.62;
+  margin-bottom: 0.35rem;
+}
+
+/* percent: smaller + less balloon */
+.sim-pct{
+  font-size: 0.98rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+/* bar: thinner, sharper, cleaner */
+.sim-bar{
+  height: 6px;
+  border-radius: 6px;
+  background: rgba(0,0,0,0.10);
+  border: 1px solid rgba(0,0,0,0.22);
+  box-shadow: none;
+}
+
+/* fill: slightly softer */
+.sim-bar span{
+  background: rgba(0,0,0,0.55);
+}
+
+/* --- optional: slightly cleaner borders for image boxes --- */
+.sim-imgbox{
+  border: 1px solid rgba(0,0,0,0.14);
+  border-radius: 10px;
+  background: rgba(0,0,0,0.015);
+}
+
+
 
