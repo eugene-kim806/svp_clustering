@@ -187,26 +187,31 @@ figcaption {
 }
 
 /* =========================
-   Similarity grid (BALANCED + CLEAN)
+   Similarity grid (NEATER + TIERED)
    ========================= */
 
 .sim-grid {
   display: grid;
-  grid-template-columns: 1.25fr 1fr;   /* was 1.55fr -> query less dominant */
+  grid-template-columns: 1.25fr 1fr; /* query less dominant */
   gap: 1.75rem;
   align-items: start;
 }
 
-/* Query */
+/* Query: reference anchor */
 .sim-query {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  /* centers relative to grid height */
   text-align: center;
-  padding-top: 0.6rem;                /* align visually with tile grid */
 }
 
 .sim-title {
-  font-size: 1.02rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  opacity: 0.7;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.55;
   margin-bottom: 0.55rem;
 }
 
@@ -223,64 +228,66 @@ figcaption {
 .sim-imgbox img {
   width: 100%;
   height: 100%;
-  object-fit: contain;                 /* default: preserve full query */
+  object-fit: contain;  /* keep query faithful */
   display: block;
 }
 
-/* Smaller, calmer query image */
+/* Query size (already smaller) */
 .sim-imgbox--query {
   width: 100%;
   aspect-ratio: 1 / 1;
-  max-width: 340px;      /* ↓ key change */
+  max-width: 340px;      /* smaller query */
   margin: 0 auto;
   background: rgba(0,0,0,0.01);
   border: 1px solid rgba(0,0,0,0.12);
 }
 
-
-
-
-
-/* Tiles */
+/* Tiles: 3×3 with stronger tier separation */
 .sim-tiles {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.9rem 1.25rem;
+  column-gap: 1.2rem;
+  row-gap: 1.6rem;       /* bigger vertical gap between rows */
+}
+
+/* add a little extra space after row 1 and row 2 */
+.sim-tiles > .sim-tile:nth-child(3),
+.sim-tiles > .sim-tile:nth-child(6) {
+  margin-bottom: 0.6rem;
 }
 
 .sim-tile {
   text-align: center;
 }
 
-/* Tile images: smaller + consistent look */
+/* tile images */
 .sim-tile .sim-imgbox {
   aspect-ratio: 1 / 1;
   width: 100%;
   max-width: 135px;
-  margin: 0 auto 0.32rem auto;
+  margin: 0 auto 0.28rem auto;
   background: rgba(0,0,0,0.01);
+  opacity: 0.95;
 }
 
-/* IMPORTANT: make tiles visually consistent (no floating whitespace) */
+/* IMPORTANT: make tiles visually consistent (avoid floating whitespace) */
 .sim-tile .sim-imgbox img {
-  object-fit: cover;                   /* tiles fill their boxes cleanly */
+  object-fit: cover;
 }
 
-/* label + percent: tighter */
+/* remove repeated label for cleaner look */
 .sim-cap {
-  font-size: 0.76rem;
-  letter-spacing: 0.02em;
-  opacity: 0.60;
-  margin-bottom: 0.14rem;
+  display: none;
 }
 
+/* percent */
 .sim-pct {
   font-size: 0.92rem;
   font-weight: 700;
-  margin-bottom: 0.16rem;
+  margin-bottom: 0.14rem;
 }
 
-/* Bar */
+/* bar */
 .sim-bar {
   width: 100%;
   max-width: 150px;
@@ -298,11 +305,15 @@ figcaption {
   background: rgba(0,0,0,0.55);
 }
 
+/* optional: fade low similarity row a bit (makes hierarchy feel real) */
+.sim-tile:nth-child(n+7) {
+  opacity: 0.78;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .sim-grid { grid-template-columns: 1fr; }
-  .sim-query { padding-top: 0; }
-  .sim-imgbox--query { max-width: 440px; }
+  .sim-imgbox--query { max-width: 320px; }
 }
 
 @media (max-width: 520px) {
