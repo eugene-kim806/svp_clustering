@@ -187,13 +187,13 @@ figcaption {
 }
 
 /* =========================
-   Similarity grid (FINAL CLEAN)
+   Similarity grid (CLEANER / LESS BALLOON)
    ========================= */
 
 .sim-grid {
   display: grid;
   grid-template-columns: 1.55fr 1fr;
-  gap: 2rem;
+  gap: 1.75rem;              /* tighter than 2rem */
   align-items: start;
 }
 
@@ -203,10 +203,10 @@ figcaption {
 }
 
 .sim-title {
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   font-weight: 600;
   opacity: 0.7;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.55rem;
 }
 
 .sim-imgbox {
@@ -227,6 +227,7 @@ figcaption {
 
 /* Query size */
 .sim-imgbox--query {
+  width: 100%;
   aspect-ratio: 1 / 1;
   max-width: 520px;
   margin: 0 auto;
@@ -236,35 +237,40 @@ figcaption {
 .sim-tiles {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem 1.4rem;
+  gap: 0.9rem 1.25rem;        /* tighter than 1rem 1.4rem */
 }
 
 .sim-tile {
   text-align: center;
 }
 
+/* ✅ MAIN CHANGE: smaller tiles + less bottom margin */
 .sim-tile .sim-imgbox {
   aspect-ratio: 1 / 1;
-  max-width: 165px;
-  margin: 0 auto 0.45rem auto;
+  width: 100%;
+  max-width: 135px;           /* was 165px -> less balloon */
+  margin: 0 auto 0.32rem auto;/* tighter */
+  opacity: 0.93;              /* tiles slightly less dominant */
 }
 
+/* label + percent: slightly tighter */
 .sim-cap {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   letter-spacing: 0.02em;
-  opacity: 0.6;
-  margin-bottom: 0.2rem;
+  opacity: 0.60;
+  margin-bottom: 0.14rem;     /* tighter than 0.2rem */
 }
 
 .sim-pct {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 700;
-  margin-bottom: 0.28rem;
+  margin-bottom: 0.16rem;     /* tighter than 0.28rem */
 }
 
 /* Bar */
 .sim-bar {
-  max-width: 165px;
+  width: 100%;
+  max-width: 150px;           /* slightly wider than tile -> cleaner */
   height: 5px;
   margin: 0 auto;
   border-radius: 6px;
@@ -286,6 +292,6 @@ figcaption {
 
 @media (max-width: 520px) {
   .sim-tiles { grid-template-columns: repeat(2, 1fr); }
-  .sim-bar,
-  .sim-tile .sim-imgbox { max-width: 160px; }
+  .sim-tile .sim-imgbox { max-width: 130px; }
+  .sim-bar { max-width: 150px; }
 }
