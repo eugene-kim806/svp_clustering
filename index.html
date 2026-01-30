@@ -152,7 +152,13 @@
     <div class = "block">
      <h3 class="subtitle is-5 has-text-weight-bold">Unsupervised Image-Based Grouping</h3>
 
-
+      
+      
+     <div class="content">
+      <p>
+        An unsupervised clustering algorithm was applied to image-derived features, grouping particles according to similarities in their visual appearance. This approach allows patterns to emerge directly from the data, rather than being imposed by predefined categories. A feature-based similarity metric was used to compare particle images across the dataset. 
+      </p>
+     </div>
 
     
   <div class="block has-text-centered">
@@ -245,19 +251,14 @@
   </figure>
 </div>
 
-
-
       
      <div class="content">
       <p>
-        An unsupervised clustering algorithm was applied to image-derived features, grouping particles according to similarities in their visual appearance. This approach allows patterns to emerge directly from the data, rather than being imposed by predefined categories. A feature-based similarity metric was used to compare particle images across the dataset. 
         Each image was represented in a learned feature space, and similarity scores were computed by comparing a reference (query) image to all other images. The resulting scores were normalized to a 0–100% scale, where higher values indicate greater visual resemblance. Representative images spanning high, intermediate, and low similarity ranges were selected to visualize how the similarity score relates to particle morphology. Images with high similarity scores closely resemble the query in shape and texture, while lower scores correspond to progressively more distinct particle appearances, demonstrating that the similarity metric captures meaningful morphological differences within the dataset.
       </p>
      </div>
     </div>
 
-
-  
 
     
   
@@ -429,12 +430,6 @@
 
 
 <div class="uncls-card">
-  <div class="uncls-card__text">
-    <p class="has-text-grey">
-      Representative unclustered particles illustrating ambiguous or intermediate morphologies that do not clearly align with a single cluster.
-    </p>
-  </div>
-
   <div class="uncls-card__grid">
     <div class="uncls-thumb"><img src="./static/images/dissim_img/amb_1.png" alt="Unclustered particle 1"></div>
     <div class="uncls-thumb"><img src="./static/images/dissim_img/amb_2.png" alt="Unclustered particle 2"></div>
@@ -442,6 +437,12 @@
     <div class="uncls-thumb"><img src="./static/images/dissim_img/amb_4.png" alt="Unclustered particle 4"></div>
     <div class="uncls-thumb"><img src="./static/images/dissim_img/amb_5.png" alt="Unclustered particle 5"></div>
     <div class="uncls-thumb"><img src="./static/images/dissim_img/amb_6.png" alt="Unclustered particle 6"></div>
+  </div>
+ 
+  <div class="uncls-card__text">
+    <p class="has-text-grey">
+      Representative unclustered particles illustrating ambiguous morphologies that do not clearly align with a single cluster.
+    </p>
   </div>
 </div>
 
